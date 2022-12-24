@@ -4,6 +4,8 @@
 > working directoryand the conventional commit message. It modifies the
 > version of the package.json file and generates a npm publish command.
 
+<br/>
+
 ## Installation
 
 ```bash
@@ -12,10 +14,12 @@ yarn add -D @bemedev/publish-command # or
 pnpm add -D @bemedev/publish-command
 ```
 
+<br/>
+
 ## Usage
 
 ```ts
-import { publish } from '@bemedev/publish-command';
+import publish from '@bemedev/publish-command';
 
 // And simply
 publish(/** packageJSON */);
@@ -23,4 +27,10 @@ publish(/** packageJSON */);
 /** optional : add custom path for package.json if needed */
 ```
 
-//TODO: Add ChangeLog
+<br/>
+
+**N.B**: _The function is asynchronous._
+
+<br/>
+
+> //TODO: Add ChangeLog

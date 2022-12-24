@@ -4,6 +4,7 @@
   "typings": "lib/index.d.ts",
   "module": "lib/index.mjs",
   "name": "@bemedev/publish-command",
+  "description": "Build package.json with new version and generates command for publishing to NPM",
   "repository": {
     "type": "git",
     "url": ""
@@ -25,6 +26,13 @@
   "files": [
     "lib",
     "public"
+  ],
+  "keywords": [
+    "publish",
+    "npm",
+    "library",
+    "package.json",
+    "version"
   ],
   "license": "MIT",
   "scripts": {
