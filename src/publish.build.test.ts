@@ -17,7 +17,7 @@ afterEach(() => {
 
 async function buildTest(
   commitSub: string,
-  expecteds: { version: string; npm: string },
+  expecteds: { version: string; npm?: string },
 ) {
   (getLastCommitAction as Mock).mockResolvedValue(commitSub);
   const npm = await publishCommand(PATH);
@@ -65,13 +65,11 @@ test('Alpha', async () => {
 test('CI', async () => {
   await buildTest('ci', {
     version: '0.0.1',
-    npm: 'npm publish --access public',
   });
 });
 
 test('Test', async () => {
   await buildTest('test', {
     version: '0.0.1',
-    npm: 'npm publish --access public',
   });
 });
