@@ -24,7 +24,8 @@ async function buildTest(
   const version = file().get('version');
 
   expect(version).toBe(expecteds.version);
-  expect(npm).toBe(expecteds.npm);
+  expect(npm.version).toBe(expecteds.version);
+  expect(npm.command).toBe(expecteds.npm);
 }
 
 test('Patch', async () => {

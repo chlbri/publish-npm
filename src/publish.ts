@@ -3,9 +3,15 @@ import { getLastCommitAction } from './commit';
 import { saveJson } from './saveJson';
 import { buildVersion } from './version';
 
-export default async function publishCommand(path?: string) {
+/**
+ * TODO: Add changelog
+ * @param packageJSON
+ * @returns
+ */
+export default async function publish(packageJSON?: string) {
   const commitSub = await getLastCommitAction();
-  const version = await buildVersion(commitSub, path);
-  saveJson(version, path);
-  return buildNpmCommand(commitSub);
+  const version = await buildVersion(commitSub, packageJSON);
+  saveJson(version, packageJSON);
+  const command = buildNpmCommand(commitSub);
+  return { command, version };
 }
