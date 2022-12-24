@@ -3,9 +3,7 @@ import { promisify } from 'util';
 
 const _getLastCommit = promisify(getLastCommit);
 
-export async function getLastCommitText() {
+export async function getLastCommitAction() {
   const commit = await _getLastCommit();
-  commit; //?
+  return commit.subject.split(' ')[0];
 }
-
-getLastCommitText();

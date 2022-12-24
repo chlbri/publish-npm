@@ -1,13 +1,21 @@
+import externals from 'rollup-plugin-node-externals';
 import tsConfigPaths from 'rollup-plugin-tsconfig-paths';
 import typescript from 'rollup-plugin-typescript2';
 
-/** @type {import('rollup').RollupOptions} */
+const tsconfig = 'tsconfig.build.json';
+
+/**
+ * @type {import('rollup').RollupOptions}
+ */
 export default {
   input: 'src/index.ts',
-  plugins: [typescript(), tsConfigPaths()],
-  external: [
-    /* TODO: Add external libraries */
+
+  plugins: [
+    tsConfigPaths({ tsConfigPath: tsconfig }),
+    typescript({ tsconfig }),
+    externals({}),
   ],
+
   output: [
     {
       format: 'es',

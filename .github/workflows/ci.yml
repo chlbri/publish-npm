@@ -46,8 +46,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Build
+        run: pnpm run build
+
       - name: Test
-        run: pnpm run build:test
+        run: pnpm run test
 
   # clean:
   #   runs-on: ubuntu-latest

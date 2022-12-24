@@ -49,8 +49,8 @@ jobs:
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
-          greater-version-only: true
           access: public
+          check-version: true
 
       # - name: TODO => Notification
       #   run: echo 'TODO => Build a Notification pipeline'
