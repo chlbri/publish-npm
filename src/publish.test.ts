@@ -1,7 +1,7 @@
 import json from 'edit-json-file';
 import { afterEach, beforeAll, expect, Mock, test, vi } from 'vitest';
 import { getLastCommitAction } from './commit';
-import publishCommand from './publish';
+import publish from './publish';
 
 const DEFAULT_VERSION = '0.0.1';
 const PATH = `${process.cwd()}/package.test.json`;
@@ -20,11 +20,12 @@ async function buildTest(
   expecteds: { version: string; npm?: string },
 ) {
   (getLastCommitAction as Mock).mockResolvedValue(commitSub);
-  const npm = await publishCommand(PATH);
+  const npm = await publish(PATH);
   const version = file().get('version');
 
   expect(version).toBe(expecteds.version);
-  expect(npm).toBe(expecteds.npm);
+  expect(npm.version).toBe(expecteds.version);
+  expect(npm.command).toBe(expecteds.npm);
 }
 
 test('Patch', async () => {
