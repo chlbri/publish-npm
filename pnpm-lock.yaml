@@ -4,6 +4,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.46.1
   '@typescript-eslint/parser': ^5.46.1
   eslint: ^8.29.0
+  git-last-commit: ^1.0.1
   husky: ^8.0.2
   onchange: ^7.1.0
   pnpm: ^7.18.2
@@ -18,6 +19,9 @@ specifiers:
   vite: 3.2.4
   vite-tsconfig-paths: ^4.0.3
   vitest: 0.25.2
+
+dependencies:
+  git-last-commit: 1.0.1
 
 devDependencies:
   '@typescript-eslint/eslint-plugin': 5.47.0_ncmi6noazr3nzas7jxykisekym
@@ -980,6 +984,10 @@ packages:
     dependencies:
       pump: 3.0.0
     dev: true
+
+  /git-last-commit/1.0.1:
+    resolution: {integrity: sha512-FDSgeMqa7GnJDxt/q0AbrxbfeTyxp4ImxEw1e4nw6NUHA5FMhFUq33dTXI4Xdgcj1VQ1q5QLWF6WxFrJ8KCBOg==}
+    dev: false
 
   /glob-parent/5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}

@@ -1,4 +1,3 @@
-//Create task to start npm build at the opening
 {
   "version": "2.0.0",
   "tasks": [
@@ -15,7 +14,28 @@
       },
       "script": "build",
       "isBackground": true,
+      "dependsOn": ["pnpm:install"],
       "detail": "Build the libary with npm",
+      "hide": true,
+      "runOptions": {
+        "runOn": "folderOpen",
+        "instanceLimit": 1
+      }
+    },
+    {
+      "label": "pnpm:install",
+      "type": "shell",
+      "command": "pnpm install",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "new",
+        "clear": false,
+        "close": true
+      },
+      "isBackground": true,
+      "detail": "Install all deps with pnpm",
       "hide": true,
       "runOptions": {
         "runOn": "folderOpen",
